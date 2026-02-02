@@ -1,14 +1,45 @@
 {% render 'partials/head.liquid' %}
 
-<article>
-  <header>
-    <h1>Hallo</h1>
-    <p>mijn naam is</p>
-  </header>
+    <header>
+      <!-- Section omdat er h1 en p in staan -->
+      <section class="header-section">
+      <!-- %20 in de url geeft het een spatie -->
 
-  <p>{{ person.name }}</p>
+      <div class="header-div">
+        <h1>{{ person.name }}</h1>
+        <!-- Div als wrapper wegens stijling -->
+        <div class="header-div-wrapper">
+          <p>24</p>
+          <p>CMD</p>
+          <p>Haarlem</p>
+        </div>
+      </div>
+      </section>
+    </header>
+    <main>
+      <div class="main-section">
+        <p class="mainsection-p-1">Dev</p>
+        <p class="mainsection-p-2">Design</p>
+        <p>Lead</p>
+      </div>
+      <div>
+        <!-- dl staat voor definition list -->
+        <dl class="section-dl">
+        <!-- defines a term -->
+        <dt>Communicatie</dt>
+        <!-- Meter is daadwerkelijk een meter -->
+        <meter min="0" max="100" value="75">at 70-100</meter>
+        <div></div>
+        
+        <dt>Zelfstandigheid</dt>
+        <meter min="0" max="100" value="70">at 70/100</meter>
+        <div></div>
 
-  <footer></footer>
-</article>
+        <dt>Samenwerken</dt>
+        <meter min="0" max="100" value="40">at 40/100</meter>
+        <img src="/imgs/barbell.svg" alt="icon of a barbell">
+      </dl>
+      </div>
+    </main>
 
 {% render 'partials/foot.liquid' %}
