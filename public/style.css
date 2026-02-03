@@ -41,15 +41,16 @@ main, a {
 
 main {
   background-color: var(--color-background-card);
-  width: max-content;
+  /* width: max-content; */
 
   padding: var(--spacing-s);
   border-radius: var(--border-radius-m);
 
   > ul {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     gap: var(--spacing-xs);
+    flex-wrap: wrap;
     margin-block: var(--spacing-s);
 
     a {
