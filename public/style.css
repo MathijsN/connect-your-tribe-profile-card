@@ -1,6 +1,8 @@
 :root {
-  --color-background: #F0EFED;
-  --color-background-card: #fff;
+  --color-background: #EDEBDE;
+  --color-background-card: #FFFFF2;
+  --color-background-button: #333333;
+  --color-text: var(--color-background-card);
 
   --spacing-m: 6rem;
   --spacing-s: 2rem;
@@ -10,6 +12,7 @@
   --border-radius-m: 1rem;
   --border-radius-s: 0.5rem;
 
+  --animation-duration: 0.2s;
 }
 
 *,
@@ -32,6 +35,10 @@ body {
   place-content: center;
 }
 
+main, a {
+  filter: drop-shadow(0px 13px 18px #33333324);
+}
+
 main {
   background-color: var(--color-background-card);
   width: max-content;
@@ -46,11 +53,11 @@ main {
     margin-block: var(--spacing-s);
 
     a {
-      background-color: var(--color-background);
+      background-color: var(--color-background-button);
       padding: var(--spacing-xs) var(--spacing-xs);
       border-radius: var(--border-radius-m);
       text-decoration: none;
-      color: black;
+      color: var(--color-text);
 
 
       display: flex;
@@ -58,16 +65,29 @@ main {
       align-items: center;
       gap: var(--spacing-s);
 
+      transition: all var(--animation-duration) ease;
+
       &::after {
         content: '';
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M20 11H7.83l5.59-5.59L12 4l-8 8l8 8l1.41-1.41L7.83 13H20z'/%3E%3C/svg%3E");
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 24 24'%3E%3Cpath fill='%23FFFFF2' d='M20 11H7.83l5.59-5.59L12 4l-8 8l8 8l1.41-1.41L7.83 13H20z'/%3E%3C/svg%3E");
         width: 1.6em;
         height: 1.6em;
         background-size: 100% 100%;
         display: block;
         flex-shrink: 0;
 
+        transition: all var(--animation-duration) ease;
         rotate: 135deg;
+      }
+
+      &:hover {
+        scale: 1.03;
+        transition: all var(--animation-duration) ease;
+
+        &::after {
+        transition: all var(--animation-duration) ease;
+        rotate: 180deg;
+      }
       }
     }
   }
@@ -92,8 +112,12 @@ img {
   width: 10rem;
   aspect-ratio: 1/1;
   border-radius: 50%;
+  background-color: black;
+
   display: flex;
   place-self: center;
+
+  margin-bottom: var(--spacing-s);
 }
 
 ul {
