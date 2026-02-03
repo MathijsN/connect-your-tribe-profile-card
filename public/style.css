@@ -12,6 +12,9 @@
   --border-radius-m: 1rem;
   --border-radius-s: 0.5rem;
 
+  --text-size-m: 2rem;
+  --text-size-s: 1rem;
+
   --animation-duration: 0.2s;
 }
 
@@ -41,10 +44,26 @@ main, a {
 
 main {
   background-color: var(--color-background-card);
-  /* width: max-content; */
 
   padding: var(--spacing-s);
   border-radius: var(--border-radius-m);
+
+  h1 {
+  color: transparent;
+  background-image: linear-gradient(45deg,#0D0F29,#B0B3D9,#0D0F29,#B0B3D9);
+  background-size: 300% 300%;
+  background-position: left bottom;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+
+  animation: --gradient-movement 10s infinite linear;
+  }
+  h2 {
+    font-size: var(--text-size-s);
+    margin-top: var(--spacing-xs);
+  }
 
   > ul {
     display: flex;
@@ -123,4 +142,11 @@ img {
 
 ul {
   list-style: none;
+}
+
+
+@keyframes --gradient-movement {
+  100% {
+    background-position: right top;
+  }
 }
