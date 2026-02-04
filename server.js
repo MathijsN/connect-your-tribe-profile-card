@@ -41,9 +41,20 @@ app.use(express.urlencoded({extended: true}))
 // Om Views weer te geven, heb je Routes nodig
 // Maak een GET route voor de index (meestal doe je dit in de root, als /)
 // In je visitekaartje was dit waarschijnlijk index.html
+
+
+
+const person = personResponseJSON.data
+person.custom = JSON.parse(person.custom)
+
 app.get('/', async function (request, response) {
    // Render index.liquid uit de Views map en geef de opgehaalde data mee, in een variabele genaamd person
-   response.render('index.liquid', {person: personResponseJSON.data})
+   response.render('index.liquid', { person })
+})
+
+app.get('/oefenen', async function (request, response) {
+   // Render index.liquid uit de Views map en geef de opgehaalde data mee, in een variabele genaamd person
+   response.render('oefenen.liquid', { person })
 })
 
 // Had je meer pagina's in je oude visitekaartje? Zoals een contact.html?

@@ -25,5 +25,7 @@
         </section>
         <h3> {{ person.bio }} </h3>
     </main>
+    <a href="/oefenen">Oefenpagina</a>
+    <details><summary>Data</summary><pre>{{ person | json:4 }}</pre></details>
 
 {% render 'partials/foot.liquid' %}
